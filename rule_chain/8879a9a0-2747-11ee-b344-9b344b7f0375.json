@@ -1,0 +1,199 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : null,
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "8879a9a0-2747-11ee-b344-9b344b7f0375"
+    },
+    "name" : "dummyData",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 1,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 2,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : null,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 57,
+        "layoutY" : 235
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 1,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var temperature = 20;\nvar humidity = 50;\nvar luminosity = 8000;\nvar tempVariation = (Math.random() * 2) - 1;\n\ntemperature += tempVariation;\ntemperature = Math.max(Math.min(temperature, 40), -10); // Limitar a temperatura entre -10 e 40\n\n// Gerar um valor aleatório entre -1 e 1 para adicionar à umidade atual\nvar humVariation = (Math.random() * 2) - 1;\nhumidity += humVariation;\nhumidity = Math.max(Math.min(humidity, 100), 0); // Limitar a umidade entre 0 e 100\n\n// Gerar um valor aleatório entre -1 e 1 para adicionar à luminosidade atual\nvar lumVariation = (Math.random() * 2) - 1;\nluminosity += lumVariation;\nluminosity = Math.max(Math.min(luminosity, 32000), 0); // Limitar a umidade entre 0 e 32000\n\nvar msg = { 'temperature':temperature, 'humidity':humidity, 'luminosity':luminosity};\n\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, msgType: msgType };",
+        "queueName" : null,
+        "originatorId" : "be246090-0a5f-11ee-ae5c-bf1bc6f67d02",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c9737660-2748-11ee-b344-9b344b7f0375"
+      },
+      "name" : "aphelandra_data",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 779,
+        "layoutY" : 311
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c97b8cb0-2748-11ee-b344-9b344b7f0375"
+      },
+      "name" : "save ts",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 402,
+        "layoutY" : 314
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c97c7710-2748-11ee-b344-9b344b7f0375"
+      },
+      "name" : "switcher",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 58,
+        "layoutY" : 296
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 1,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var temperature = 20;\nvar humidity = 50;\nvar luminosity = 8000;\nvar tempVariation = (Math.random() * 2) - 1;\n\ntemperature += tempVariation;\ntemperature = Math.max(Math.min(temperature, 40), -10); // Limitar a temperatura entre -10 e 40\n\n// Gerar um valor aleatório entre -1 e 1 para adicionar à umidade atual\nvar humVariation = (Math.random() * 2) - 1;\nhumidity += humVariation;\nhumidity = Math.max(Math.min(humidity, 100), 0); // Limitar a umidade entre 0 e 100\n\n// Gerar um valor aleatório entre -1 e 1 para adicionar à luminosidade atual\nvar lumVariation = (Math.random() * 2) - 1;\nluminosity += lumVariation;\nluminosity = Math.max(Math.min(luminosity, 32000), 0); // Limitar a umidade entre 0 e 32000\n\nvar msg = { 'temperature':temperature, 'humidity':humidity, 'luminosity':luminosity};\n\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, msgType: msgType };",
+        "queueName" : null,
+        "originatorId" : "e2e25a40-0a5f-11ee-ae5c-bf1bc6f67d02",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4bb43060-2749-11ee-b344-9b344b7f0375"
+      },
+      "name" : "jiboia_data",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 59,
+        "layoutY" : 358
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 1,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var temperature = 20;\nvar humidity = 50;\nvar luminosity = 8000;\nvar tempVariation = (Math.random() * 2) - 1;\n\ntemperature += tempVariation;\ntemperature = Math.max(Math.min(temperature, 40), -10); // Limitar a temperatura entre -10 e 40\n\n// Gerar um valor aleatório entre -1 e 1 para adicionar à umidade atual\nvar humVariation = (Math.random() * 2) - 1;\nhumidity += humVariation;\nhumidity = Math.max(Math.min(humidity, 100), 0); // Limitar a umidade entre 0 e 100\n\n// Gerar um valor aleatório entre -1 e 1 para adicionar à luminosidade atual\nvar lumVariation = (Math.random() * 2) - 1;\nluminosity += lumVariation;\nluminosity = Math.max(Math.min(luminosity, 32000), 0); // Limitar a umidade entre 0 e 32000\n\nvar msg = { 'temperature':temperature, 'humidity':humidity, 'luminosity':luminosity};\n\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, msgType: msgType };",
+        "queueName" : null,
+        "originatorId" : "ddba2980-0a5f-11ee-ae5c-bf1bc6f67d02",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4bb4cca0-2749-11ee-b344-9b344b7f0375"
+      },
+      "name" : "philodendro_data",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 54,
+        "layoutY" : 425
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 1,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var temperature = 20;\nvar humidity = 50;\nvar luminosity = 8000;\nvar tempVariation = (Math.random() * 2) - 1;\n\ntemperature += tempVariation;\ntemperature = Math.max(Math.min(temperature, 40), -10); // Limitar a temperatura entre -10 e 40\n\n// Gerar um valor aleatório entre -1 e 1 para adicionar à umidade atual\nvar humVariation = (Math.random() * 2) - 1;\nhumidity += humVariation;\nhumidity = Math.max(Math.min(humidity, 100), 0); // Limitar a umidade entre 0 e 100\n\n// Gerar um valor aleatório entre -1 e 1 para adicionar à luminosidade atual\nvar lumVariation = (Math.random() * 2) - 1;\nluminosity += lumVariation;\nluminosity = Math.max(Math.min(luminosity, 32000), 0); // Limitar a umidade entre 0 e 32000\n\nvar msg = { 'temperature':temperature, 'humidity':humidity, 'luminosity':luminosity};\n\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, msgType: msgType };",
+        "queueName" : null,
+        "originatorId" : "ab8f7320-0a5f-11ee-ae5c-bf1bc6f67d02",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4bb5b700-2749-11ee-b344-9b344b7f0375"
+      },
+      "name" : "samambaia_data",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}
