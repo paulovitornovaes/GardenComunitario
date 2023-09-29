@@ -29,18 +29,6 @@
     },
     "to" : {
       "entityType" : "ASSET",
-      "id" : "0eeccfd0-0a56-11ee-ae5c-bf1bc6f67d02"
-    },
-    "type" : "Contains",
-    "typeGroup" : "COMMON"
-  }, {
-    "additionalInfo" : null,
-    "from" : {
-      "entityType" : "ASSET",
-      "id" : "f91bf140-0a55-11ee-ae5c-bf1bc6f67d02"
-    },
-    "to" : {
-      "entityType" : "ASSET",
       "id" : "15770190-0a56-11ee-ae5c-bf1bc6f67d02"
     },
     "type" : "Contains",
