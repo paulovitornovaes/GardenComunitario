@@ -1,0 +1,87 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "5a091750-5eb9-11ee-a649-d9a755f9452a"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "5109fe60-4525-11ee-9556-9b344b7f0375"
+    },
+    "externalId" : {
+      "entityType" : "ASSET",
+      "id" : "eb7310f0-4524-11ee-9556-9b344b7f0375"
+    },
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "eb7310f0-4524-11ee-9556-9b344b7f0375"
+    },
+    "label" : "Garden",
+    "name" : "Garden Holambra",
+    "type" : "garden"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "eb7310f0-4524-11ee-9556-9b344b7f0375"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "0e6c9e50-4525-11ee-9556-9b344b7f0375"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "15770190-0a56-11ee-ae5c-bf1bc6f67d02"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "eb7310f0-4524-11ee-9556-9b344b7f0375"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : -22.63034411247328,
+      "jsonValue" : null,
+      "key" : "latitude",
+      "lastUpdateTs" : 1693174702923,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : -47.05214036151325,
+      "jsonValue" : null,
+      "key" : "longitude",
+      "lastUpdateTs" : 1693174702923,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "nodeDisabled",
+      "lastUpdateTs" : 1693173998745,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "type",
+      "lastUpdateTs" : 1693174132159,
+      "longValue" : null,
+      "strValue" : "asset"
+    } ]
+  }
+}

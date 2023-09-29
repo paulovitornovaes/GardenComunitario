@@ -1410,7 +1410,10 @@
         "dashboardCss" : ""
       }
     },
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "DASHBOARD",
+      "id" : "ac679130-0cb0-11ee-9c58-bf1bc6f67d02"
+    },
     "id" : {
       "entityType" : "DASHBOARD",
       "id" : "ac679130-0cb0-11ee-9c58-bf1bc6f67d02"

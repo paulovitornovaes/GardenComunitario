@@ -13,7 +13,10 @@
       "id" : "8879a9a0-2747-11ee-b344-9b344b7f0375"
     },
     "description" : "Profile para dispositivos que coletam datas de cultivos",
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "0b4ed320-5eb9-11ee-a649-d9a755f9452a"
+    },
     "firmwareId" : null,
     "id" : {
       "entityType" : "DEVICE_PROFILE",
