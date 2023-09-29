@@ -20,7 +20,7 @@
     },
     "deviceProfileId" : {
       "entityType" : "DEVICE_PROFILE",
-      "id" : "76ad9790-0a55-11ee-ae5c-bf1bc6f67d02"
+      "id" : "0b4ed320-5eb9-11ee-a649-d9a755f9452a"
     },
     "externalId" : null,
     "firmwareId" : null,
@@ -31,7 +31,7 @@
     "label" : "esp32-plant",
     "name" : "jiboia-icarai",
     "softwareId" : null,
-    "type" : "default"
+    "type" : "arduino-for-plant"
   },
   "credentials" : {
     "credentialsId" : "jiboia",
