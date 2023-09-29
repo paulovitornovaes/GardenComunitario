@@ -6,7 +6,7 @@
     },
     "assetProfileId" : {
       "entityType" : "ASSET_PROFILE",
-      "id" : "76bab6f0-0a55-11ee-ae5c-bf1bc6f67d02"
+      "id" : "56e84f50-5eb9-11ee-a649-d9a755f9452a"
     },
     "customerId" : {
       "entityType" : "CUSTOMER",
@@ -19,7 +19,7 @@
     },
     "label" : "Country",
     "name" : "Brasil",
-    "type" : "asset"
+    "type" : "localidade"
   },
   "relations" : [ {
     "additionalInfo" : null,
