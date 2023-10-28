@@ -40,6 +40,10 @@
       "fromIndex" : 5,
       "toIndex" : 2,
       "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 2,
+      "type" : "Success"
     } ],
     "firstNodeIndex" : null,
     "nodes" : [ {
@@ -63,7 +67,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c9737660-2748-11ee-b344-9b344b7f0375"
+        "id" : "ba1029d0-5ebf-11ee-b77b-c533a3399215"
       },
       "name" : "aphelandra_data",
       "ruleChainId" : null,
@@ -85,7 +89,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c97b8cb0-2748-11ee-b344-9b344b7f0375"
+        "id" : "ba109f00-5ebf-11ee-b77b-c533a3399215"
       },
       "name" : "save ts",
       "ruleChainId" : null,
@@ -105,7 +109,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c97c7710-2748-11ee-b344-9b344b7f0375"
+        "id" : "ba116250-5ebf-11ee-b77b-c533a3399215"
       },
       "name" : "switcher",
       "ruleChainId" : null,
@@ -132,7 +136,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "4bb43060-2749-11ee-b344-9b344b7f0375"
+        "id" : "ba11b070-5ebf-11ee-b77b-c533a3399215"
       },
       "name" : "jiboia_data",
       "ruleChainId" : null,
@@ -159,7 +163,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "4bb4cca0-2749-11ee-b344-9b344b7f0375"
+        "id" : "ba11fe90-5ebf-11ee-b77b-c533a3399215"
       },
       "name" : "philodendro_data",
       "ruleChainId" : null,
@@ -176,7 +180,7 @@
         "periodInSeconds" : 1,
         "scriptLang" : "TBEL",
         "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
-        "tbelScript" : "var temperature = 20;\nvar humidity = 50;\nvar luminosity = 8000;\nvar tempVariation = (Math.random() * 2) - 1;\n\ntemperature += tempVariation;\ntemperature = Math.max(Math.min(temperature, 40), -10); // Limitar a temperatura entre -10 e 40\n\n// Gerar um valor aleatório entre -1 e 1 para adicionar à umidade atual\nvar humVariation = (Math.random() * 2) - 1;\nhumidity += humVariation;\nhumidity = Math.max(Math.min(humidity, 100), 0); // Limitar a umidade entre 0 e 100\n\n// Gerar um valor aleatório entre -1 e 1 para adicionar à luminosidade atual\nvar lumVariation = (Math.random() * 2) - 1;\nluminosity += lumVariation;\nluminosity = Math.max(Math.min(luminosity, 32000), 0); // Limitar a umidade entre 0 e 32000\n\nvar msg = { 'temperature':temperature, 'humidity':humidity, 'luminosity':luminosity};\n\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, msgType: msgType };",
+        "tbelScript" : "var temperature = 30;\nvar humidity = 90;\nvar luminosity = 9000;\nvar tempVariation = (Math.random() * 2) - 1;\n\ntemperature += tempVariation;\ntemperature = Math.max(Math.min(temperature, 40), -10); // Limitar a temperatura entre -10 e 40\n\n// Gerar um valor aleatório entre -1 e 1 para adicionar à umidade atual\nvar humVariation = (Math.random() * 2) - 1;\nhumidity += humVariation;\nhumidity = Math.max(Math.min(humidity, 100), 0); // Limitar a umidade entre 0 e 100\n\n// Gerar um valor aleatório entre -1 e 1 para adicionar à luminosidade atual\nvar lumVariation = (Math.random() * 2) - 1;\nluminosity += lumVariation;\nluminosity = Math.max(Math.min(luminosity, 32000), 0); // Limitar a umidade entre 0 e 32000\n\nvar msg = { 'temperature':temperature, 'humidity':humidity, 'luminosity':luminosity};\n\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, msgType: msgType };",
         "queueName" : null,
         "originatorId" : "ab8f7320-0a5f-11ee-ae5c-bf1bc6f67d02",
         "originatorType" : "DEVICE"
@@ -186,9 +190,36 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "4bb5b700-2749-11ee-b344-9b344b7f0375"
+        "id" : "ba124cb0-5ebf-11ee-b77b-c533a3399215"
       },
       "name" : "samambaia_data",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 54,
+        "layoutY" : 495
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 1,
+        "scriptLang" : "TBEL",
+        "jsScript" : "var msg = { temp: 42, humidity: 77 };\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+        "tbelScript" : "var temperature = 10;\nvar humidity = 70;\nvar luminosity = 6000;\nvar tempVariation = (Math.random() * 2) - 1;\n\ntemperature += tempVariation;\ntemperature = Math.max(Math.min(temperature, 40), -10); // Limitar a temperatura entre -10 e 40\n\n// Gerar um valor aleatório entre -1 e 1 para adicionar à umidade atual\nvar humVariation = (Math.random() * 2) - 1;\nhumidity += humVariation;\nhumidity = Math.max(Math.min(humidity, 100), 0); // Limitar a umidade entre 0 e 100\n\n// Gerar um valor aleatório entre -1 e 1 para adicionar à luminosidade atual\nvar lumVariation = (Math.random() * 2) - 1;\nluminosity += lumVariation;\nluminosity = Math.max(Math.min(luminosity, 32000), 0); // Limitar a umidade entre 0 e 32000\n\nvar msg = { 'temperature':temperature, 'humidity':humidity, 'luminosity':luminosity};\n\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, msgType: msgType };",
+        "queueName" : null,
+        "originatorId" : "0e6c9e50-4525-11ee-9556-9b344b7f0375",
+        "originatorType" : "DEVICE"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f88c56f0-5ec1-11ee-b77b-c533a3399215"
+      },
+      "name" : "begonia_data",
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"

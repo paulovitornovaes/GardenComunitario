@@ -4,6 +4,13 @@
     "assignedCustomers" : [ {
       "customerId" : {
         "entityType" : "CUSTOMER",
+        "id" : "3eae9780-4525-11ee-9556-9b344b7f0375"
+      },
+      "title" : "Garden Inga",
+      "public" : false
+    }, {
+      "customerId" : {
+        "entityType" : "CUSTOMER",
         "id" : "5109fe60-4525-11ee-9556-9b344b7f0375"
       },
       "title" : "Garden Holambra",
@@ -80,7 +87,7 @@
             "datasources" : [ {
               "type" : "entity",
               "name" : null,
-              "entityAliasId" : "11d2b41d-3e2a-2805-bca3-05654cbf9e3e",
+              "entityAliasId" : "f0ea296c-2626-9544-f1e6-384d4350d651",
               "filterId" : null,
               "dataKeys" : [ {
                 "name" : "nodeDisabled",
@@ -1259,7 +1266,7 @@
           }
         },
         "device_details" : {
-          "name" : "${entityName}\t",
+          "name" : "${entityName}",
           "root" : false,
           "layouts" : {
             "main" : {
